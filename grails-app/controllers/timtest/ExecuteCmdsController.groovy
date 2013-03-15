@@ -8,6 +8,17 @@ class ExecuteCmdsController {
         List assayList =  linkedHashMap."allAssays"
         render(view: 'test1', model: ["elapsedTime" : linkedHashMap."elapsedTime", "allAssays" : assayList ])
     }
+    def assaylist(){
+        LinkedHashMap<String, Object> linkedHashMap = testingService.findAllAssays()
+        List assayList =  linkedHashMap."allAssays"
+        render(view: 'assaylist', model: ["elapsedTime" : linkedHashMap."elapsedTime", "allAssays" : assayList ])
+    }
+    def projectlist(){
+        LinkedHashMap<String, Object> linkedHashMap = testingService.findAllProjects()
+        List assayList =  linkedHashMap."allAssays"
+        render(view: 'projectlist', model: ["elapsedTime" : linkedHashMap."elapsedTime", "allAssays" : assayList ])
+    }
+
     def test1p(){
         LinkedHashMap<String, Object> linkedHashMap = testingService.findAllProjects()
         List assayList =  linkedHashMap."allAssays"

@@ -1,7 +1,7 @@
 Testsuite: timtest.ResultsTests
-Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 7.484 sec
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 0.595 sec
 ------------- Standard Error -----------------
 --Output from testRestBuilderInstalled--
 ------------- ---------------- ---------------
 
-Testcase: testRestBuilderInstalled took 7.46 sec
+Testcase: testRestBuilderInstalled took 0.575 sec

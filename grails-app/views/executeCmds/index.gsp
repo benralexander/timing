@@ -7,25 +7,81 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
-  <title></title>
+  <title>Timing tests</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('#assayListing').click(function () {
+
+                $.ajax({
+                    url: '/timtest/executeCmds/assaylist',
+                    type: 'GET',
+                    cache: false,
+                    success: function (molSpreadSheetData) {
+                        $('#assayhere').html(molSpreadSheetData);
+                    },
+                    error: function () {
+                        $('#assayhere').html('No data found');
+                    },
+                    complete: function () {
+
+                    }
+                });
+            });
+
+            $('#projectListing').click(function () {
+
+                $.ajax({
+                    url: '/timtest/executeCmds/projectlist',
+                    type: 'GET',
+                    cache: false,
+                    success: function (molSpreadSheetData) {
+                        $('#assayhere').html(molSpreadSheetData);
+                    },
+                    error: function () {
+                        $('#assayhere').html('No data found');
+                    },
+                    complete: function () {
+
+                    }
+                });
+            });
+
+
+        });
+    </script>
 </head>
 <body>
+<div style="vertical-align:top;height: 1100px; width: 800px; ">
     <h1>Welcome to the friendly REST API timing service</h1>
-<g:form action="test1">
-    <g:submitButton name="assayTiming" value="retrieve some sample assay IDs (the first 500)"></g:submitButton>
-</g:form>
-<g:form action="test2">
-    <g:textArea name="assayid" rows="1" cols="10"/>
-    <g:submitButton name="assayTiming" value="Retrieve all activities for assay"></g:submitButton>
-</g:form>
-<g:form action="test1p">
-    <g:submitButton name="projectTiming" value="retrieve all existing projects IDs"></g:submitButton>
-</g:form>
-<g:form action="test2p">
-    <g:textArea name="projectid" rows="1" cols="10"/>
-    <g:submitButton name="projectTiming" value="Retrieve all activities for project"></g:submitButton>
-</g:form>
+<div id="assays" style="vertical-align:middle;text-align: left;   float: right; height: 1000px; width: 200px; margin-right: 100px;  padding-right:20px;padding-top: 40px; ">
+    <button id="assayListing">Get assay IDs</button>
+    <button id="projectListing">Get project IDs</button>
+    <g:textArea rows="50" cols="20"  name="assayhere"></g:textArea>
+</div>
+<div id="controls" style="vertical-align:middle;float: left; padding-right: 10px;padding-top: 40px; height: 250px; width: 300px; ">
+    <div style="text-align: right;vertical-align:middle;">
+
+        <g:form action="test2">
+          <span>
+              <g:submitButton name="assayTiming" value="Copy an assay id, then click" style="vertical-align:middle"></g:submitButton>
+              <g:textArea name="assayid" rows="1" cols="8" style="vertical-align:middle"/>
+          </span>
+
+
+        </g:form>
+        <g:form action="test2p">
+            <span>
+                <g:submitButton name="projectTiming" value="Copy an project, then click" style="vertical-align:middle"></g:submitButton>
+                <g:textArea name="projectid" rows="1" cols="8" style="vertical-align:middle"/>
+            </span>
+        </g:form>
+
+    </div>
+</div>
+</div>
 </body>
 </html>
