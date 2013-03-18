@@ -2,37 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="750a602c-d74e-4481-a641-dcdcadadd978" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\github\timing\timtest-grailsPlugins.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/html/timtest/0_ResultsTests.html" afterPath="$PROJECT_DIR$/target/test-reports/html/timtest/0_ResultsTests.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/timtest/ExecuteCmdsController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/timtest/ExecuteCmdsController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/plain/TEST-unit-unit-timtest.ResultsTests.txt" afterPath="$PROJECT_DIR$/target/test-reports/plain/TEST-unit-unit-timtest.ResultsTests.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/TEST-unit-unit-timtest.ResultsTests.xml" afterPath="$PROJECT_DIR$/target/test-reports/TEST-unit-unit-timtest.ResultsTests.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/TESTS-TestSuites.xml" afterPath="$PROJECT_DIR$/target/test-reports/TESTS-TestSuites.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/html/all.html" afterPath="$PROJECT_DIR$/target/test-reports/html/all.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application.properties" afterPath="$PROJECT_DIR$/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/web-app/WEB-INF/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/WEB-INF/tld/c.tld" afterPath="$PROJECT_DIR$/web-app/WEB-INF/tld/c.tld" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/WEB-INF/tld/fmt.tld" afterPath="$PROJECT_DIR$/web-app/WEB-INF/tld/fmt.tld" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/WEB-INF/tld/grails.tld" afterPath="$PROJECT_DIR$/web-app/WEB-INF/tld/grails.tld" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/index.gsp" afterPath="$PROJECT_DIR$/grails-app/views/index.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/timtest/TestingService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/timtest/TestingService.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/executeCmds/index.gsp" afterPath="$PROJECT_DIR$/grails-app/views/executeCmds/index.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/html/index.html" afterPath="$PROJECT_DIR$/target/test-reports/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/WEB-INF/sitemesh.xml" afterPath="$PROJECT_DIR$/web-app/WEB-INF/sitemesh.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/WEB-INF/tld/spring.tld" afterPath="$PROJECT_DIR$/web-app/WEB-INF/tld/spring.tld" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timtest.iml" afterPath="$PROJECT_DIR$/timtest.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timtest.ipr" afterPath="$PROJECT_DIR$/timtest.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timtest.iws" afterPath="$PROJECT_DIR$/timtest.iws" />
     </list>
     <ignored path="timtest.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
-    <file path="/Dummy.txt" changelist="750a602c-d74e-4481-a641-dcdcadadd978" time="1363349461598" ignored="false" />
+    <file path="/Dummy.txt" changelist="750a602c-d74e-4481-a641-dcdcadadd978" time="1363541127766" ignored="false" />
     <file path="/a.dummy" changelist="750a602c-d74e-4481-a641-dcdcadadd978" time="1363349454113" ignored="false" />
-    <file path="/index.gsp" changelist="750a602c-d74e-4481-a641-dcdcadadd978" time="1363356193324" ignored="false" />
+    <file path="/index.gsp" changelist="750a602c-d74e-4481-a641-dcdcadadd978" time="1363548151009" ignored="false" />
     <file path="$PROJECT_DIR$/../bard-web-query/bard-web-client/application.properties" changelist="750a602c-d74e-4481-a641-dcdcadadd978" time="1363350589577" ignored="false" />
     <file path="$PROJECT_DIR$/../bard-web-query/bard-rest-api-wrapper/application.properties" changelist="750a602c-d74e-4481-a641-dcdcadadd978" time="1363350590357" ignored="false" />
     <file path="/assaylist.gsp" changelist="750a602c-d74e-4481-a641-dcdcadadd978" time="1363353408179" ignored="false" />
+    <file path="/listing-6.1.html" changelist="750a602c-d74e-4481-a641-dcdcadadd978" time="1363357750308" ignored="false" />
+    <file path="/ExecuteCmdsController.groovy" changelist="750a602c-d74e-4481-a641-dcdcadadd978" time="1363548984552" ignored="false" />
+    <file path="/Dummy.groovy" changelist="750a602c-d74e-4481-a641-dcdcadadd978" time="1363568648658" ignored="false" />
+    <file path="/TestingService.groovy" changelist="750a602c-d74e-4481-a641-dcdcadadd978" time="1363548747992" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +71,36 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/controllers/timtest/ExecuteCmdsController.groovy" line="54" class="timtest.ExecuteCmdsController" package="timtest">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/controllers/timtest/ExecuteCmdsController.groovy" line="55" class="timtest.ExecuteCmdsController" package="timtest">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -90,104 +109,109 @@
     <favorites_list name="timtest" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ResultsTests.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/unit/timtest/ResultsTests.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="6" selection-start="229" selection-end="229" vertical-scroll-proportion="-5.9130435">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestingService.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/services/timtest/TestingService.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="73" selection-start="762" selection-end="798" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/index.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="0" selection-start="1814" selection-end="1814" vertical-scroll-proportion="-9.192307">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/index.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="115" selection-start="2482" selection-end="2482" vertical-scroll-proportion="-18.387754">
-              <folding>
-                <marker date="1363356442087" expanded="true" signature="2460:2481" placeholder="{...}" />
-                <marker date="1363356442087" expanded="true" signature="2567:2588" placeholder="{...}" />
-                <marker date="1363356442087" expanded="true" signature="2778:2852" placeholder="{...}" />
-                <marker date="1363356442087" expanded="true" signature="2778:2799" placeholder="{...}" />
-                <marker date="1363356442087" expanded="true" signature="2889:2910" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listing-5.17.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://D:/downloads/javascript_book/ninja-code/ninja-code/chapter-5/listing-5.17.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExecuteCmdsController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/timtest/ExecuteCmdsController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="33" selection-start="825" selection-end="825" vertical-scroll-proportion="-13.304348">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test1p.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/test1p.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="11" selection-start="0" selection-end="371" vertical-scroll-proportion="-1.3877552">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projectlist.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/projectlist.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="62" selection-end="62" vertical-scroll-proportion="-1.0408163">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="assaylist.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/assaylist.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="27" selection-start="62" selection-end="62" vertical-scroll-proportion="-1.0408163">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test2.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/test2.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="vertical" split-proportion="0.6735871">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="ResultsTests.groovy" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/unit/timtest/ResultsTests.groovy">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="9" column="6" selection-start="229" selection-end="229" vertical-scroll-proportion="-5.9130435">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TestingService.groovy" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/grails-app/services/timtest/TestingService.groovy">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="104" column="0" selection-start="4676" selection-end="4676" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.gsp" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/grails-app/views/index.gsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="89" column="0" selection-start="1814" selection-end="1814" vertical-scroll-proportion="-3.3846154">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.gsp" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/index.gsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="87" column="77" selection-start="3305" selection-end="3305" vertical-scroll-proportion="-11.387755">
+                  <folding>
+                    <marker date="1363549057463" expanded="true" signature="2487:2508" placeholder="{...}" />
+                    <marker date="1363549057463" expanded="true" signature="2594:2615" placeholder="{...}" />
+                    <marker date="1363549057463" expanded="false" signature="2838:2912" placeholder="{...}" />
+                    <marker date="1363549057463" expanded="true" signature="2838:2859" placeholder="{...}" />
+                    <marker date="1363549057463" expanded="true" signature="2949:2970" placeholder="{...}" />
+                    <marker date="1363549057463" expanded="true" signature="3187:3208" placeholder="{...}" />
+                    <marker date="1363549057463" expanded="true" signature="3315:3336" placeholder="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ExecuteCmdsController.groovy" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/grails-app/controllers/timtest/ExecuteCmdsController.groovy">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="51" column="61" selection-start="3024" selection-end="3036" vertical-scroll-proportion="0.4728682">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="test1p.gsp" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/test1p.gsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="4" column="11" selection-start="0" selection-end="371" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="projectlist.gsp" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/projectlist.gsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="3" column="0" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <marker date="1363355967009" expanded="false" signature="17:60" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="assaylist.gsp" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/assaylist.gsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="3" column="27" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <marker date="1363356312878" expanded="false" signature="17:60" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="ExecuteCmdsController.groovy" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/grails-app/controllers/timtest/ExecuteCmdsController.groovy">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="55" column="0" selection-start="3185" selection-end="3185" vertical-scroll-proportion="1.7351599">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -207,15 +231,17 @@
       <list>
         <option value="$PROJECT_DIR$/grails-app/views/index.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/executeCmds/projectlist.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/timtest/ExecuteCmdsController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/executeCmds/assaylist.gsp" />
+        <option value="D:/downloads/javascript_book/ninja-code/ninja-code/chapter-6/listing-6.1.html" />
         <option value="$PROJECT_DIR$/grails-app/views/executeCmds/index.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/services/timtest/TestingService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/timtest/ExecuteCmdsController.groovy" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="96" />
-    <option name="y" value="198" />
+    <option name="x" value="-1" />
+    <option name="y" value="193" />
     <option name="width" value="2056" />
     <option name="height" value="1337" />
   </component>
@@ -459,9 +485,9 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Grails.Grails:timing">
     <configuration default="false" name="ResultsTests" type="GrailsRunConfigurationType" factoryName="Grails" temporary="true">
@@ -511,6 +537,13 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <configuration default="false" name="Grails:@grails.project.name@" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="@grails.project.name@" />
       <setting name="vmparams" value="" />
@@ -528,7 +561,7 @@
     <configuration default="false" name="Grails:timing" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="timtest" />
       <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="-Dgrails.server.port.http=8047  run-app" />
+      <setting name="cmdLine" value="-Dgrails.server.port.http=8048  -XX:MaxPermSize=1024m run-app" />
       <setting name="depsClasspath" value="true" />
       <setting name="passParentEnv" value="true" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -580,21 +613,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="96" y="198" width="2056" height="1337" extended-state="0" />
-    <editor active="false" />
+    <frame x="-1" y="193" width="2056" height="1337" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3988245" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2720403" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942164" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -602,11 +635,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24975026" sideWeight="0.6011755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24975026" sideWeight="0.7279597" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942164" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -668,6 +701,31 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/test1p.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="11" selection-start="0" selection-end="371" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/projectlist.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1363355967009" expanded="false" signature="17:60" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/assaylist.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="27" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1363356312878" expanded="false" signature="17:60" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/test1.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="0" selection-start="420" selection-end="488" vertical-scroll-proportion="-6.9387755">
@@ -682,38 +740,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/downloads/javascript_book/ninja-code/ninja-code/chapter-5/listing-5.17.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://D:/downloads/javascript_book/ninja-code/ninja-code/chapter-6/listing-6.1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="30" selection-start="725" selection-end="725" vertical-scroll-proportion="0.58885545" />
+      </provider>
+    </entry>
+    <entry file="file://D:/downloads/javascript_book/ninja-code/ninja-code/chapter-5/listing-5.18.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="29" selection-start="476" selection-end="476" vertical-scroll-proportion="0.63452566" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/test1p.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="11" selection-start="0" selection-end="371" vertical-scroll-proportion="-1.3877552">
+        <state line="4" column="11" selection-start="0" selection-end="371" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/projectlist.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="62" selection-end="62" vertical-scroll-proportion="-1.0408163">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/timtest/ExecuteCmdsController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="33" selection-start="825" selection-end="825" vertical-scroll-proportion="-13.304348">
-          <folding />
+        <state line="3" column="0" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1363355967009" expanded="false" signature="17:60" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/assaylist.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="27" selection-start="62" selection-end="62" vertical-scroll-proportion="-1.0408163">
+        <state line="3" column="27" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1363356312878" expanded="false" signature="17:60" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="0" selection-start="1814" selection-end="1814" vertical-scroll-proportion="-3.3846154">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/timtest/TestingService.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/index.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="73" selection-start="762" selection-end="798" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="87" column="77" selection-start="3305" selection-end="3305" vertical-scroll-proportion="-11.387755">
+          <folding>
+            <marker date="1363549057463" expanded="true" signature="2487:2508" placeholder="{...}" />
+            <marker date="1363549057463" expanded="true" signature="2594:2615" placeholder="{...}" />
+            <marker date="1363549057463" expanded="false" signature="2838:2912" placeholder="{...}" />
+            <marker date="1363549057463" expanded="true" signature="2838:2859" placeholder="{...}" />
+            <marker date="1363549057463" expanded="true" signature="2949:2970" placeholder="{...}" />
+            <marker date="1363549057463" expanded="true" signature="3187:3208" placeholder="{...}" />
+            <marker date="1363549057463" expanded="true" signature="3315:3336" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -724,29 +809,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/index.gsp">
+    <entry file="file://$PROJECT_DIR$/grails-app/services/timtest/TestingService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="0" selection-start="1814" selection-end="1814" vertical-scroll-proportion="-9.192307">
+        <state line="104" column="0" selection-start="4676" selection-end="4676" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/executeCmds/index.gsp">
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/timtest/ExecuteCmdsController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="115" selection-start="2482" selection-end="2482" vertical-scroll-proportion="-18.387754">
-          <folding>
-            <marker date="1363356442087" expanded="true" signature="2460:2481" placeholder="{...}" />
-            <marker date="1363356442087" expanded="true" signature="2567:2588" placeholder="{...}" />
-            <marker date="1363356442087" expanded="true" signature="2778:2852" placeholder="{...}" />
-            <marker date="1363356442087" expanded="true" signature="2778:2799" placeholder="{...}" />
-            <marker date="1363356442087" expanded="true" signature="2889:2910" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/downloads/javascript_book/ninja-code/ninja-code/chapter-5/listing-5.17.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="51" column="61" selection-start="3024" selection-end="3036" vertical-scroll-proportion="0.4728682">
           <folding />
         </state>
       </provider>

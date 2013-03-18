@@ -82,6 +82,38 @@ class TestingService {
         return returnValue
     }
 
+    LinkedHashMap<String, Object>  returnAllCompounds(LinkedHashMap<String,List<String>> cmptsToExpts,List experimentList) {
+        LinkedHashMap<String, Object>  returnValue = [:]
+        int numberOfCompounds = 0
+        Long accumulatingTime =0L
+        int numberOfExperiments = 0
+        for ( String individualExperiment in experimentList)  {
+            numberOfExperiments++
+            Boolean keepGoing = true
+            String coreQuery = "http://bard.nih.gov/api/v15"
+            String currentQuery =  "${coreQuery}/experiments/${individualExperiment}/compounds"
+            while (keepGoing) {
+                RetFromCall retFromCall = timeRestCall(currentQuery)
+                for (String cmpdstr in retFromCall.collection) {
+                    String cmpd =  cmpdstr.split("/")[2]
+                    if (cmptsToExpts.containsKey(cmpd))
+                        cmptsToExpts[cmpd]  << individualExperiment
+                    else
+                        cmptsToExpts.put(cmpd,[individualExperiment])
+                }
+                if (retFromCall.link != null)
+                    currentQuery =  "${coreQuery}${retFromCall.link}"
+                else
+                    keepGoing = false
+            }
+        }
+        returnValue."elapsedTime" =  accumulatingTime
+        returnValue."numberOfExperiments"  =   numberOfExperiments
+        return returnValue
+    }
+
+
+
     LinkedHashMap<String, Object>  findAllActivities(List experimentList ) {
         LinkedHashMap<String, Object>  returnValue = [:]
         int numberOfCompounds = 0

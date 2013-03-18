@@ -63,22 +63,32 @@
     <g:textArea rows="50" cols="20"  name="assayhere"></g:textArea>
 </div>
 <div id="controls" style="vertical-align:middle;float: left; padding-right: 10px;padding-top: 40px; height: 250px; width: 300px; ">
-    <div style="text-align: right;vertical-align:middle;">
+    <div style="text-align: left;vertical-align:middle;">
 
         <g:form action="test2">
-          <span>
-              <g:submitButton name="assayTiming" value="Copy an assay id, then click" style="vertical-align:middle"></g:submitButton>
+          <span  style="text-align :left">
+              <g:submitButton name="assayTiming" value="Retrieve all results for ASSAY" style="vertical-align:middle"></g:submitButton>
               <g:textArea name="assayid" rows="1" cols="8" style="vertical-align:middle"/>
           </span>
 
 
         </g:form>
+
+
         <g:form action="test2p">
-            <span>
-                <g:submitButton name="projectTiming" value="Copy an project, then click" style="vertical-align:middle"></g:submitButton>
+            <span  style="text-align :left">
+                <g:submitButton name="projectTiming" value="Retrieve all results for PROJECT" style="vertical-align:middle"></g:submitButton>
                 <g:textArea name="projectid" rows="1" cols="8" style="vertical-align:middle"/>
             </span>
         </g:form>
+
+        <g:form action="cmpdsperproj">
+            <span  style="text-align :left">
+                <g:submitButton name="getcmpds" value="Retrieve cmpds for PROJECT" style="vertical-align:middle"></g:submitButton>
+                <g:textArea name="projectid" rows="1" cols="8" maxlength="100"  style="vertical-align:middle"/>
+            </span>
+        </g:form>
+
 
     </div>
 </div>

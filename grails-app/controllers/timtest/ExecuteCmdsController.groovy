@@ -42,6 +42,19 @@ class ExecuteCmdsController {
         render(view: 'test2', model: ["elapsedTime" : totalElapsedTime, "allExperiments":retrievedExperimentMap."allExperiments","numberOfCompoundActivities" : findAllActivities."numberOfCompoundActivities" ])
     }
 
+    def cmpdsperproj(){
+        String projectId = params.projectid?.trim()
+        LinkedHashMap<String,List<String>> cmpdsToExpts = [:]
+        List<String> diffProjs =  projectId.split(/,/)
+        for (String proj in diffProjs){
+            LinkedHashMap<String, Object> retrievedExperimentMap = testingService.findAllExperimentsPerProject( proj )
+            List experimentList =  retrievedExperimentMap."allExperiments"
+            def t = testingService.returnAllCompounds( cmpdsToExpts, experimentList )
+            print "numberOfExperiments${t."numberOfExperiments"}"
+        }
+        println("Found ${cmpdsToExpts.size()} cmpds")
+    }
+
     def index() {
         render(view: 'index')
     }
