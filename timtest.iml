@@ -45,7 +45,6 @@
     <orderEntry type="module-library">
       <library name="Grails User Library">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/lib" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/opensymphony/sitemesh/jars/sitemesh-2.4.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/jars/hibernate-jpa-2.0-api-1.0.1.Final.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/javax.transaction/jta/jars/jta-1.1.jar!/" />
@@ -93,7 +92,6 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/cglib/cglib/jars/cglib-2.2.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.aspectj/aspectjrt/jars/aspectjrt-1.6.10.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.aspectj/aspectjweaver/jars/aspectjweaver-1.6.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.liquibase/liquibase-core/jars/liquibase-core-2.0.5.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hibernate/hibernate-ehcache/jars/hibernate-ehcache-3.6.10.Final.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/dom4j/dom4j/jars/dom4j-1.6.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.javassist/javassist/jars/javassist-3.16.1-GA.jar!/" />
@@ -114,13 +112,6 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/com.google.protobuf/protobuf-java/jars/protobuf-java-2.4.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework.uaa/org.springframework.uaa.client/bundles/org.springframework.uaa.client-1.0.1.RELEASE.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-juli/jars/tomcat-embed-logging-juli-7.0.30.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-annotations-api/jars/tomcat-annotations-api-7.0.30.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-catalina/jars/tomcat-catalina-7.0.30.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-7.0.30.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-api/jars/tomcat-api-7.0.30.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-util/jars/tomcat-util-7.0.30.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-juli/jars/tomcat-juli-7.0.30.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-coyote/jars/tomcat-coyote-7.0.30.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-catalina-ant/jars/tomcat-catalina-ant-7.0.30.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-log4j/jars/tomcat-embed-logging-log4j-7.0.30.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-jasper/jars/tomcat-embed-jasper-7.0.30.jar!/" />
@@ -130,6 +121,24 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.ant/ant-junit/jars/ant-junit-1.8.2.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.ant/ant-launcher/jars/ant-launcher-1.8.2.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.ant/ant/jars/ant-1.8.2.jar!/" />
+          <root url="file://$MODULE_DIR$/lib" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.liquibase/liquibase-core/jars/liquibase-core-2.0.5.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-annotations-api/jars/tomcat-annotations-api-7.0.30.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-catalina/jars/tomcat-catalina-7.0.30.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-7.0.30.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-api/jars/tomcat-api-7.0.30.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-util/jars/tomcat-util-7.0.30.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-juli/jars/tomcat-juli-7.0.30.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-coyote/jars/tomcat-coyote-7.0.30.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/xml-resolver/xml-resolver/jars/xml-resolver-1.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/xerces/xercesImpl/jars/xercesImpl-2.8.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/net.sourceforge.nekohtml/nekohtml/jars/nekohtml-1.9.9.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/net.sf.ezmorph/ezmorph/jars/ezmorph-1.0.6.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/net.sf.json-lib/json-lib/jars/json-lib-2.3-jdk15.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.3.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.groovy.modules.http-builder/http-builder/jars/http-builder-0.5.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

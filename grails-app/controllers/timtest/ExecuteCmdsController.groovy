@@ -46,14 +46,63 @@ class ExecuteCmdsController {
         String projectId = params.projectid?.trim()
         LinkedHashMap<String,List<String>> cmpdsToExpts = [:]
         List<String> diffProjs =  projectId.split(/,/)
+        int totalNumberOfExperiments = 0
         for (String proj in diffProjs){
             LinkedHashMap<String, Object> retrievedExperimentMap = testingService.findAllExperimentsPerProject( proj )
             List experimentList =  retrievedExperimentMap."allExperiments"
             def t = testingService.returnAllCompounds( cmpdsToExpts, experimentList )
-            print "numberOfExperiments${t."numberOfExperiments"}"
+            print "numberOfExperiments${t."numberOfExperiments"} in project ${proj}"
+            totalNumberOfExperiments  +=  t."numberOfExperiments"
         }
-        println("Found ${cmpdsToExpts.size()} cmpds")
+        // find widely used compounds
+        int numberOfCompoundsWeWant = 50
+        int numberOfTimesSeen =  totalNumberOfExperiments
+        List<String> compoundsWeWant =[]
+        while ((cmpdsToExpts.find{it.value.size()==numberOfTimesSeen}==null)  && (numberOfTimesSeen>0)){
+            numberOfTimesSeen--
+        }
+        int numberOfCompoundsWeHave = 0
+        while ((numberOfCompoundsWeHave < numberOfCompoundsWeWant) && (numberOfTimesSeen > 0)){
+            if (cmpdsToExpts.findAll{it.value.size()==numberOfTimesSeen} != null){
+                for ( String oneCompound in cmpdsToExpts.findAll{it.value.size()==numberOfTimesSeen}*.keys) {
+                    if   (compoundsWeWant.size() < numberOfCompoundsWeWant)
+                        compoundsWeWant <<  oneCompound
+                }
+                numberOfCompoundsWeHave =  compoundsWeWant.size()
+                numberOfTimesSeen--
+            }
+
+        }
+        println("Found ${cmpdsToExpts.size()} original cmpds. Selected ${numberOfCompoundsWeHave}")
     }
+
+    def activitiesacrossprojs(){
+        String projectIds = params.projectids?.trim()
+        String compoundIds = params.compoundids?.trim()
+        List<String> rawProjs =  projectIds.split(/,/)
+        List<String> rawCompounds =  compoundIds.split(/ /)
+        List<String> projectList = []
+        for (String aProject in rawProjs) {
+            projectList << aProject.trim()
+        }
+        List<String> compoundList = []
+        for (String aCompound in rawCompounds) {
+            compoundList << aCompound.trim()
+        }
+        int totalNumberOfExperiments = 0
+        LinkedHashMap<String, Object>  allExperiments = testingService.convertProjectsToExperiments(projectList)
+        println "get projs = ${allExperiments.elapsedTime}"
+        LinkedHashMap<String, Object> allSids = testingService.convertCompoundsToSids(compoundList)
+        println "get cmpds = ${allSids.elapsedTime}"
+        LinkedHashMap<String, Object> finalResults =testingService.getMixedExptData(allExperiments.eids,allSids.sids)
+        println "get cmpds = ${finalResults.elapsedTime}"
+
+    }
+
+    def pantherproj(){
+
+    }
+
 
     def index() {
         render(view: 'index')

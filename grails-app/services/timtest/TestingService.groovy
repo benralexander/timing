@@ -3,10 +3,15 @@ package timtest
 import grails.plugins.rest.client.RestBuilder
 import grails.plugins.rest.client.RestResponse
 import groovy.json.JsonSlurper
+import groovyx.net.http.HttpResponseException
+import groovyx.net.http.RESTClient
 import org.codehaus.groovy.grails.web.json.JSONArray
 import org.codehaus.groovy.grails.web.json.JSONObject
 import org.perf4j.LoggingStopWatch
 import org.perf4j.StopWatch
+import groovyx.net.http.HttpResponseDecorator
+
+import static groovyx.net.http.ContentType.URLENC
 
 class TestingService {
 
@@ -48,6 +53,7 @@ class TestingService {
         List <String> experimentIDs  = []
         String unparsedExpt =  retFromCall.body.split("/")[2]
         experimentIDs << unparsedExpt.split('"')[0]
+        println "api time ${returnValue."elapsedTime"}"
         returnValue."allExperiments"  =   experimentIDs
         return returnValue
     }
@@ -60,7 +66,8 @@ class TestingService {
         List <String> groupIndividualExperiment = retFromCall.body.split(',')
         for ( String individualExperimentLine in groupIndividualExperiment) {
             String unparsedExpt =  individualExperimentLine.split("/")[2]
-            experimentIDs << unparsedExpt.split('"')[0]
+            String tempVersion = unparsedExpt.split('"')[0]
+            experimentIDs << tempVersion.trim()
         }
         returnValue."allExperiments"  =   experimentIDs
         return returnValue
@@ -84,7 +91,6 @@ class TestingService {
 
     LinkedHashMap<String, Object>  returnAllCompounds(LinkedHashMap<String,List<String>> cmptsToExpts,List experimentList) {
         LinkedHashMap<String, Object>  returnValue = [:]
-        int numberOfCompounds = 0
         Long accumulatingTime =0L
         int numberOfExperiments = 0
         for ( String individualExperiment in experimentList)  {
@@ -113,11 +119,98 @@ class TestingService {
     }
 
 
+    LinkedHashMap<String, Object> convertCompoundsToSids(List<String> compoundList)  {
+        LinkedHashMap<String, Object>  returnValue = [:]
+        List<String>  sidList = []
+        int totalElapsedTime  = 0
+        for ( String individualCompound in compoundList)  {
+            Boolean keepGoing = true
+            String coreQuery = "http://bard.nih.gov/api/v15"
+            String currentQuery =  "${coreQuery}/substances/cid/${individualCompound}"
+            while (keepGoing) {
+                RetFromCall retFromCall = timeResposeEntityCall(currentQuery)
+                String elapsedTimeForThisCall =  retFromCall.elapsedTime
+                int elapsedTimeAsInt =  0
+                try{
+                    elapsedTimeAsInt = Integer.parseInt(elapsedTimeForThisCall)
+                } catch(Exception e)  {
+                    assert false,"We should never have failed string conversion here"
+                }
+                totalElapsedTime +=  elapsedTimeAsInt
+                List<String> eachRetLine =  retFromCall.body.split(/,/)
+                for (String oneLine in eachRetLine) {
+                    String sid =  oneLine.split("/")[2].split("\"")[0]
+                    if (!sidList.contains(sid))
+                        sidList <<  sid.trim()
+                }
+                if (retFromCall.link != null)
+                    currentQuery =  "${coreQuery}${retFromCall.link}"
+                else
+                    keepGoing = false
+            }
+        }
+        returnValue."elapsedTime" =  totalElapsedTime
+        returnValue."sids"  =  sidList
+        return returnValue
+    }
+
+
+
+    LinkedHashMap<String, Object> getMixedExptData(List<String> eidList,List<String> sidList)  {
+        LinkedHashMap<String, Object>  returnValue = [:]
+        int totalElapsedTime  = 0
+            Boolean keepGoing = true
+            String coreQuery = "http://bard.nih.gov/api/v15"
+            String currentQuery =  "${coreQuery}/exptdata"
+            while (keepGoing) {
+                RetFromCall retFromCall = postRestCallRESTClient(currentQuery,eidList,sidList)
+                String elapsedTimeForThisCall =  retFromCall.elapsedTime
+                int elapsedTimeAsInt =  0
+                try{
+                    elapsedTimeAsInt = Integer.parseInt(elapsedTimeForThisCall)
+                } catch(Exception e)  {
+                    assert false,"We should never have failed string conversion here"
+                }
+                totalElapsedTime +=  elapsedTimeAsInt
+                if (retFromCall.link != null)
+                    currentQuery =  "${coreQuery}${retFromCall.link}"
+                else
+                    keepGoing = false
+            }
+        returnValue."elapsedTime" =  totalElapsedTime
+        return returnValue
+
+    }
+
+
+
+
+
+
+    LinkedHashMap<String, Object> convertProjectsToExperiments (List<String> projects)  {
+        LinkedHashMap<String, Object>  returnValue = [:]
+        List<String>  allExperiments = []
+        for (String proj in projects){
+            LinkedHashMap<String, Object> retrievedExperimentMap = findAllExperimentsPerProject( proj )
+            List experimentList =  retrievedExperimentMap."allExperiments"
+            returnValue.elapsedTime = retrievedExperimentMap."elapsedTime".toString()
+            for (String experiment in experimentList) {
+                if (!allExperiments.contains(experiment)){
+                    allExperiments <<  experiment
+                }
+            }
+        }
+        returnValue.eids =  allExperiments
+        returnValue
+    }
+
+
 
     LinkedHashMap<String, Object>  findAllActivities(List experimentList ) {
         LinkedHashMap<String, Object>  returnValue = [:]
         int numberOfCompounds = 0
         Long accumulatingTime =0L
+        int loops = 0
         for ( String individualExperiment in experimentList)  {
             Boolean keepGoing = true
             String coreQuery = "http://bard.nih.gov/api/v15"
@@ -130,12 +223,70 @@ class TestingService {
                     currentQuery =  "${coreQuery}${retFromCall.link}"
                 else
                     keepGoing = false
+                print "(${++loops}) time exptdata = ${retFromCall.elapsedTime}"
             }
         }
         returnValue."elapsedTime" =  accumulatingTime
         returnValue."numberOfCompoundActivities"  =  numberOfCompounds
         return returnValue
     }
+
+
+
+    RetFromCall postRestCall(String urlSpecification,List<String> eidList,List<String> sidList) {
+        RESTClient http = new RESTClient(urlSpecification)
+        HttpResponseException httpResponseException
+        Closure c = {
+                sids = sidList.join(",")
+                eids = eidList.join(",")
+        }
+//        Closure c = {
+//            contentType "application/json"
+//            json {
+//                sids = sidList.join(",")
+//                eids = eidList.join(",")
+//            }
+//        }
+        def f = restBuilder.post(urlSpecification,c)
+//        }
+//        stopWatch.stop("timereq", urlSpecification);
+//        retFromCall.elapsedTime = stopWatch.elapsedTime
+//        JSONObject jsonObject = restResponse.json
+//        JSONArray jsonArray = jsonObject."collection"
+//        retFromCall.collection =  jsonArray*.toString()
+//        if (jsonObject.link)
+//            retFromCall.link =  jsonObject.link
+        new RetFromCall()
+    }
+
+
+
+
+
+
+    RetFromCall postRestCallRESTClient(String urlSpecification,List<String> eidList,List<String> sidList) {
+        RetFromCall retFromCall = new RetFromCall()
+        RESTClient http = new RESTClient(urlSpecification)
+        stopWatch.start()
+        try{
+            HttpResponseException httpResponseException
+            def postBody = [sids:sidList.join(","),eids:eidList.join(",") ]
+
+            HttpResponseDecorator serverResponse =
+                (HttpResponseDecorator) http.post(
+                        path: urlSpecification,
+                        body: postBody,
+                        requestContentType: URLENC
+                )
+        }  catch (Exception e){
+            e.printStackTrace()
+        }
+        stopWatch.stop("timereq", urlSpecification);
+        retFromCall.elapsedTime = stopWatch.elapsedTime
+        retFromCall
+    }
+
+
 
 
     RetFromCall timeRestCall(String urlSpecification) {
@@ -163,6 +314,9 @@ class TestingService {
         //retFromCall.link ?: restResponse.link
         retFromCall
     }
+
+
+
 
 }
 

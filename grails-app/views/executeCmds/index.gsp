@@ -74,6 +74,7 @@
 
         </g:form>
 
+        <hr>
 
         <g:form action="test2p">
             <span  style="text-align :left">
@@ -82,12 +83,39 @@
             </span>
         </g:form>
 
+        <hr>
+
         <g:form action="cmpdsperproj">
             <span  style="text-align :left">
                 <g:submitButton name="getcmpds" value="Retrieve cmpds for PROJECT" style="vertical-align:middle"></g:submitButton>
                 <g:textArea name="projectid" rows="1" cols="8" maxlength="100"  style="vertical-align:middle"/>
             </span>
         </g:form>
+
+        <hr>
+
+        <g:form action="activitiesacrossprojs">
+            <span  style="text-align :left">
+                <g:submitButton name="getacts" value="Retrieve act. across projects" style="vertical-align:middle"></g:submitButton>
+            </span>
+            <span  style="text-align :center">
+                <g:textArea name="projectids" rows="1" cols="8" maxlength="100"  style="vertical-align:middle"/>
+                Compounds
+                <g:textArea name="compoundids" rows="10" cols="8" maxlength="10000"  style="vertical-align:middle"/>
+            </span>
+        </g:form>
+
+        <hr>
+        <hr>
+        <hr>
+
+
+        <g:form action="pantherproj">
+            <span  style="text-align :left">
+                <g:submitButton name="retrievePantherDB" value="Retrieve Panther DB" style="vertical-align:middle"></g:submitButton>
+            </span>
+        </g:form>
+
 
 
     </div>
