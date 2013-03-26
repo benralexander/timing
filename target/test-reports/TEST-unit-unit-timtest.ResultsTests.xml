@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Cognomen" name="timtest.ResultsTests" tests="1" time="0.595" timestamp="2013-03-15T12:12:13">
-  <properties />
-  <testcase classname="timtest.ResultsTests" name="testRestBuilderInstalled" time="0.575" />
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[--Output from testRestBuilderInstalled--
-]]></system-err>
-</testsuite>
