@@ -100,7 +100,7 @@ class ExecuteCmdsController {
     }
 
     def pantherproj(){
-
+        LinkedHashMap<String, Object> retrievedExperimentMap = testingService.stepThroughAllTargets()
     }
 
 

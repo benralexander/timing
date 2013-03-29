@@ -30,7 +30,8 @@ class TestingService {
         returnValue."elapsedTime" =  retFromCall.elapsedTime
         List <String> assayIDs  = []
         for (String element in retFromCall.collection )
-            assayIDs << element.split("/")[2]
+            assayIDs << retriever (element, /\w+/, 1, "/assays/xxxx")
+       //     assayIDs << element.split("/")[2]
         returnValue."allAssays"  =  assayIDs
         return returnValue
     }
@@ -41,7 +42,8 @@ class TestingService {
         returnValue."elapsedTime" =  retFromCall.elapsedTime
         List <String> assayIDs  = []
         for (String element in retFromCall.collection )
-            assayIDs << element.split("/")[2]
+            assayIDs << retriever (element, /\w+/, 1, "/projects/xxxx")
+        //    assayIDs << element.split("/")[2]
         returnValue."allAssays"  =  assayIDs
         return returnValue
     }
@@ -240,27 +242,108 @@ class TestingService {
                 sids = sidList.join(",")
                 eids = eidList.join(",")
         }
-//        Closure c = {
-//            contentType "application/json"
-//            json {
-//                sids = sidList.join(",")
-//                eids = eidList.join(",")
-//            }
-//        }
         def f = restBuilder.post(urlSpecification,c)
-//        }
-//        stopWatch.stop("timereq", urlSpecification);
-//        retFromCall.elapsedTime = stopWatch.elapsedTime
-//        JSONObject jsonObject = restResponse.json
-//        JSONArray jsonArray = jsonObject."collection"
-//        retFromCall.collection =  jsonArray*.toString()
-//        if (jsonObject.link)
-//            retFromCall.link =  jsonObject.link
         new RetFromCall()
     }
 
 
 
+
+
+
+
+
+
+
+
+
+    void examineTarget(String accessionNumber,JsonSlurper jsonSlurper,FileWriter fileWriter,List<String>  recordedTargets  ) {
+        LinkedHashMap<String, Object> returnValue = [:]
+
+        String coreQuery = "http://bard.nih.gov/api/v15"
+        String currentQuery = "${coreQuery}/targets/accession/${accessionNumber}"
+        RetFromCall retFromCall = timeResposeEntityCall(currentQuery)
+        String elapsedTimeForThisCall = retFromCall.elapsedTime
+        int elapsedTimeAsInt = 0
+        try {
+            elapsedTimeAsInt = Integer.parseInt(elapsedTimeForThisCall)
+        } catch (Exception e) {
+            assert false, "We should never have failed string conversion here"
+        }
+        def f = retFromCall.body
+
+        def g = jsonSlurper.parseText(f)
+        if (g.classes.size() > 0){
+            int numberOfClasses =  g.classes.size()
+            //for (def targetClass in g.classes){
+            def  targetClass =  g.classes[numberOfClasses-1]
+                if (!recordedTargets.contains(targetClass."id")) {
+                    recordedTargets << targetClass."id"
+                    fileWriter <<  targetClass."id" << '\t' <<  targetClass."name" << '\t' << targetClass."description" << '\t' <<
+                            targetClass."levelIdentifier" << '\t' << targetClass."source" << '\t' << accessionNumber  << '\n'
+                    if ((recordedTargets.size()%50) == 0)
+                        println "We are up to ${recordedTargets.size()} unique IDs"
+                    fileWriter.flush()
+                }
+            //}
+        }
+        returnValue."elapsedTime" = elapsedTimeAsInt
+//        returnValue."sids" = sidList
+        return //returnValue
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    LinkedHashMap<String, Object> stepThroughAllTargets() {
+        LinkedHashMap<String, Object> returnValue = [:]
+        List<String>  recordedTargets = []
+        int totalElapsedTime = 0
+        Boolean keepGoing = true
+        File file=new File("target.txt")
+        FileWriter fileWriter = new FileWriter(file)
+        JsonSlurper jsonSlurper =  new JsonSlurper()
+        String coreQuery = "http://bard.nih.gov/api/v15"
+        String currentQuery = "${coreQuery}/targets"
+        while (keepGoing) {
+            RetFromCall retFromCall = timeRestCall(currentQuery)
+            for (String cmpdstr in retFromCall.collection) {
+                String cmpd = retriever (cmpdstr, /\w+/, 2, "/targets/accession/xxxxxx")
+                examineTarget (cmpd, jsonSlurper,fileWriter,recordedTargets)
+            }
+            if (retFromCall.link != null)
+                currentQuery = "${coreQuery}${retFromCall.link}"
+            else
+                keepGoing = false
+            int elapsedTimeAsInt = 0
+            try {
+                elapsedTimeAsInt = Integer.parseInt(retFromCall.elapsedTime.toString())
+            } catch (Exception e) {
+                assert false, "We should not have failed string conversion.  Expected number, received ${retFromCall.elapsedTime}"
+            }
+            totalElapsedTime += elapsedTimeAsInt
+        }
+
+        returnValue."elapsedTime" = totalElapsedTime
+        return returnValue
+    }
+
+
+
+
+    String retriever (String incomingString, String regularExpression, int indexOfDesiredString, String textOfErrorMessage) {
+        java.util.regex.Matcher matcher = incomingString =~ regularExpression
+        assert matcher.getCount() > indexOfDesiredString, "ERROR: Expected string of form ${textOfErrorMessage}, but received ${incomingString}"
+        return matcher[indexOfDesiredString]
+    }
 
 
 
@@ -311,7 +394,6 @@ class TestingService {
         stopWatch.stop("timereq", urlSpecification);
         retFromCall.elapsedTime = stopWatch.elapsedTime
         retFromCall.body =  restResponse.responseEntity.body
-        //retFromCall.link ?: restResponse.link
         retFromCall
     }
 
