@@ -31,7 +31,6 @@ class RingNode {
         this.source = source
     }
 
-
     public RingNode( String name, int size = 0  ){
         this.name = name
         this.size = size
@@ -41,6 +40,56 @@ class RingNode {
         this.name = name
         this.size = 0
         this.children = children
+    }
+
+    boolean equals(o) {
+        if (this.is(o)) return true
+        if (getClass() != o.class) return false
+
+        RingNode ringNode = (RingNode) o
+
+        if (ID != ringNode.ID) return false
+        if (description != ringNode.description) return false
+        if (levelIdentifier != ringNode.levelIdentifier) return false
+        if (name != ringNode.name) return false
+
+        return true
+    }
+
+    int hashCode() {
+        int result
+        result = (name != null ? name.hashCode(): 0)
+        result = 31 * result + (ID != null ? ID.hashCode(): 0)
+        result = 31 * result + (description != null ? description.hashCode(): 0)
+        result = 31 * result + (levelIdentifier != null ? levelIdentifier.hashCode(): 0)
+        return result
+    }
+
+    public int numberOfLevels () {
+        int returnValue = 0
+        if (levelIdentifier != null) {
+           List <String> listOfGroups = levelIdentifier.split(/\./)
+            for ( String oneGroup in listOfGroups) {
+                if (oneGroup != "00"){
+                    returnValue++
+                }
+            }
+        }
+        return returnValue
+    }
+
+
+    public String shortenedIdentifierString () {
+        StringBuilder stringBuilder = new StringBuilder()
+        if (levelIdentifier != null) {
+            List <String> listOfGroups = levelIdentifier.split(/\./)
+            for ( String oneGroup in listOfGroups) {
+                if (oneGroup != "00"){
+                    stringBuilder << "${oneGroup}.".toString()
+                }
+            }
+        }
+        return returnValue
     }
 
 
@@ -131,7 +180,35 @@ class RingNode {
     }
 
 
-    @Override
+
+    public String writeHierarchyPath ( LinkedHashMap<String,RingNode> ringNodeMgr ) {
+        StringBuilder stringBuilder = new StringBuilder()
+        describeMeAndMyParent (this,ringNodeMgr, stringBuilder)
+        stringBuilder.toString()
+    }
+
+    public void describeMeAndMyParent ( RingNode me, LinkedHashMap<String,RingNode> ringNodeMgr, StringBuilder stringBuilder ) {
+        RingNode myParent = null
+        // find my parent, if I have one
+        for (RingNode oneRingNode in ringNodeMgr.values()) {
+            if (oneRingNode.children.contains(me)) {
+                myParent = oneRingNode
+                break
+            }
+        }
+        if (myParent == null) { // we are at the root
+            stringBuilder << me.name
+        } else {  // keep going up
+            describeMeAndMyParent(myParent,ringNodeMgr,stringBuilder)
+            stringBuilder << "${me.name}\\".toString()
+//            stringBuilder << "${me.name}/${describeMeAndMyParent(myParent,ringNodeMgr,stringBuilder)}".toString()
+        }
+    }
+
+
+
+
+        @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder()
         // start things out

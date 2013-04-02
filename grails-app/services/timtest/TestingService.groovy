@@ -3,13 +3,13 @@ package timtest
 import grails.plugins.rest.client.RestBuilder
 import grails.plugins.rest.client.RestResponse
 import groovy.json.JsonSlurper
+import groovyx.net.http.HttpResponseDecorator
 import groovyx.net.http.HttpResponseException
 import groovyx.net.http.RESTClient
 import org.codehaus.groovy.grails.web.json.JSONArray
 import org.codehaus.groovy.grails.web.json.JSONObject
 import org.perf4j.LoggingStopWatch
 import org.perf4j.StopWatch
-import groovyx.net.http.HttpResponseDecorator
 
 import static groovyx.net.http.ContentType.URLENC
 
@@ -273,19 +273,47 @@ class TestingService {
         def f = retFromCall.body
 
         def g = jsonSlurper.parseText(f)
-        if (g.classes.size() > 0){
-            int numberOfClasses =  g.classes.size()
-            //for (def targetClass in g.classes){
-            def  targetClass =  g.classes[numberOfClasses-1]
-                if (!recordedTargets.contains(targetClass."id")) {
-                    recordedTargets << targetClass."id"
-                    fileWriter <<  targetClass."id" << '\t' <<  targetClass."name" << '\t' << targetClass."description" << '\t' <<
-                            targetClass."levelIdentifier" << '\t' << targetClass."source" << '\t' << accessionNumber  << '\n'
-                    if ((recordedTargets.size()%50) == 0)
-                        println "We are up to ${recordedTargets.size()} unique IDs"
-                    fileWriter.flush()
+        List<RingNode>  ringNodeList = []
+        // get the notes out of the Json and put them into a sorted data structure
+        if (g.classes.size() > 0) {
+            int numberOfClasses = g.classes.size()
+            for (def targetClass in g.classes) {
+                ringNodeList << new RingNode(targetClass."name",
+                        targetClass."id",
+                        targetClass."description",
+                        targetClass."levelIdentifier",
+                        targetClass."source")
+            }
+
+            ringNodeList.sort {RingNode ringNodeA, RingNode ringNodeB -> ringNodeA.numberOfLevels() <=> ringNodeB.numberOfLevels() }
+            // link up that list of data structures into a tree
+            LinkedHashMap<String, RingNode> ringNodeMgr = [:]
+            ringNodeMgr["1."] = new RingNode("\\", "0", "root", "1", "none")
+            for (RingNode ringNode in ringNodeList) {
+                RingNode currentRingNode = ringNodeMgr["1."]
+                List<String> listOfGroups = ringNode.levelIdentifier.split(/\./)
+                String buildingString = ""
+                for (String oneGroup in listOfGroups) {
+                    buildingString += "${oneGroup}."
+                    if (ringNodeMgr.containsKey(buildingString)) {
+                        currentRingNode = ringNodeMgr[buildingString]
+                    } else {
+                        ringNodeMgr[buildingString] = ringNode
+                        currentRingNode.children << ringNode
+                        break
+                    }
                 }
-            //}
+            }
+            // Everything node (except the root) now gets written out, and tree position is explicitly represented
+            ringNodeMgr.each { String key, RingNode ringNode ->
+                if (key != '1.')  {
+                    fileWriter << ringNode.ID << '\t' << ringNode.name << '\t' << ringNode.description << '\t' <<
+                            ringNode.levelIdentifier << '\t' << ringNode.source << '\t' << accessionNumber << '\t' <<
+                            ringNode.writeHierarchyPath(ringNodeMgr) << '\n'
+
+                }
+            }
+            fileWriter.flush()
         }
         returnValue."elapsedTime" = elapsedTimeAsInt
 //        returnValue."sids" = sidList
@@ -294,6 +322,17 @@ class TestingService {
 
 
 
+//    //for (def targetClass in g.classes){
+//    def  targetClass =  g.classes[numberOfClasses-1]
+//    if (!recordedTargets.contains(targetClass."id")) {
+//        recordedTargets << targetClass."id"
+//        fileWriter <<  targetClass."id" << '\t' <<  targetClass."name" << '\t' << targetClass."description" << '\t' <<
+//                targetClass."levelIdentifier" << '\t' << targetClass."source" << '\t' << accessionNumber  << '\n'
+//        if ((recordedTargets.size()%50) == 0)
+//            println "We are up to ${recordedTargets.size()} unique IDs"
+//        fileWriter.flush()
+//    }
+//    //}
 
 
 
